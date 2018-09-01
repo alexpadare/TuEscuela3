@@ -1,0 +1,44 @@
+﻿@model TuEscuela.ModelView.PlanEstudios
+@{
+    ViewBag.Title = "DetallesCarrera";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Html.DisplayFor(modelItem => Model.NombreCarrera) </h2>
+
+
+<div class="container">
+    
+        @foreach (var item in Model.Niveles)
+        {
+            <div class="container">
+                <h3>@Html.DisplayFor(modelItem => item.TipoNivel) @Html.DisplayFor(modelItem => item.Nivel)</h3>
+            </div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Materia</th>
+                        <th scope="col">Creditos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var materia in item.Materias)
+                    { 
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(materiaModel => materia.NombreMateria)
+                            </td>    
+                            <td>
+                                @Html.DisplayFor(materiaModel => materia.Creditos)
+                            </td>    
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+         
+        
+        }
+    
+</div>

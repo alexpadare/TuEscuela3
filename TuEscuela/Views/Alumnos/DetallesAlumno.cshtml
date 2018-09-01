@@ -1,0 +1,44 @@
+﻿@model TuEscuela.ModelView.AlumnoDireccion
+@{
+    ViewBag.Title = "DetallesAlumno";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-4 form-group"><img src="@Url.Action("GetFile", "Alumnos", new { id = Model.Alumno.IdAlumno })" alt="Imagen no disponible" /></div>
+<div class="col-md-8 form-group">
+    <h2>
+        @Html.DisplayFor(model => model.Alumno.Nombre)
+        @Html.DisplayFor(model => model.Alumno.ApellidoPaterno)
+        @Html.DisplayFor(model => model.Alumno.ApellidoMaterno)
+    </h2>
+    
+</div>
+
+
+<hr />
+
+<div class="container">
+
+    <div>
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <dl class="dl-horizontal">
+                    <dt>@Html.DisplayNameFor(model => model.Alumno.Correo)</dt>
+                    <dd>@Html.DisplayFor(model => model.Alumno.Correo)</dd>
+                    <dt>@Html.DisplayNameFor(model => model.Alumno.CURP)</dt>
+                    <dd>@Html.DisplayFor(model => model.Alumno.CURP)</dd>
+                    <dt>@Html.DisplayNameFor(model => model.Alumno.Edad)</dt>
+                    <dd>@Html.DisplayFor(model => model.Alumno.Edad)</dd>
+                    <dt>@Html.DisplayNameFor(model => model.Alumno.FechaNacimiento)</dt>
+                    <dd>@Html.DisplayFor(model => model.Alumno.FechaNacimiento)</dd>
+                    <dt>@Html.DisplayNameFor(model => model.Alumno.Genero)</dt>
+                    <dd>@Html.DisplayFor(model => model.Alumno.Genero)</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

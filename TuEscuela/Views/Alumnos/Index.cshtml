@@ -1,0 +1,63 @@
+﻿@model IEnumerable<TuEscuela.Models.Alumno>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Alumnos</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">IdAlumno</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido Pat.</th>
+            <th scope="col">Apellido Mat.</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Genero</th>
+            <th scope="col">Num. Control</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdAlumno)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApellidoPaterno)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApellidoMaterno)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Edad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tel1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genero)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumControl)
+                </td>
+                
+                <td>
+                    @Html.ActionLink("Detalles", "DetallesAlumno", "Alumnos", new { id = item.IdAlumno }, null)
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+@Html.ActionLink("Nuevo", "CrearAlumno", "Alumnos")
+
+
+
